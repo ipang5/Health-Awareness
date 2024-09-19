@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - Alpha Gen Health</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function calculateBMI() {
+            let weight = document.getElementById("weight").value;
+            let height = document.getElementById("height").value / 100;  // convert to meters
+            let bmi = weight / (height * height);
+            bmi = bmi.toFixed(2);
+
+            let resultText = "Your BMI is " + bmi + ". ";
+
+            if (bmi < 18.5) {
+                resultText += "You are Underweight";
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                resultText += "You have a Normal Weight.";
+            } else if (bmi >= 25 && bmi <= 29.9) {
+                resultText += "You are Overweight.";
+            } else {
+                resultText += "You are Obese.";
+            }
+
+            document.getElementById("result").innerText = resultText;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>BMI Calculator</h1>
+    </header>
+    <main>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="healthinfo.html">Health Info</a></li>
+            <li><a href="bmicalculator.html">BMI Calculator</a></li>
+        </ul>
+    </nav>
+
+        <p>Body Mass Index (BMI) is a measure that uses your height and weight to estimate whether you are underweight, normal weight, overweight, or obese.</p>
+        <form onsubmit="event.preventDefault(); calculateBMI();">
+            <label for="weight">Weight (kg): </label>
+            <input type="number" id="weight" required><br><br>
+            <label for="height">Height (cm): </label>
+            <input type="number" id="height" required><br><br>
+            <input type="submit" value="Calculate BMI">
+        </form>
+        <p id="result"></p>
+
+<img src="pic/bmi.jpg" alt="BMI";
+    style="width:400px;height:400x; align-items:center; justify-content:center;">
+
+    </main>
+</body>
+</html>
